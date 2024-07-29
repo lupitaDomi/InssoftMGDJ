@@ -1,0 +1,52 @@
+﻿@model PruebaInssoft.Models.Usuario
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear Usuario</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="d-flex justify-content-center ">
+        <div class="col-md-4 ">
+            <form asp-action="Create" >
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ApPaterno" class="control-label"></label>
+                    <input asp-for="ApPaterno" class="form-control" />
+                    <span asp-validation-for="ApPaterno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ApMaterno" class="control-label"></label>
+                    <input asp-for="ApMaterno" class="form-control" />
+                    <span asp-validation-for="ApMaterno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br/>
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+   
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
